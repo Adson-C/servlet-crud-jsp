@@ -28,6 +28,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	display: flex;
+	float: right;
 }
 
 h1 {
@@ -38,29 +39,88 @@ h1 {
 label {
 	height: 2rem;
 	size: 12px;
+	float: left;
 }
 
 .senha {
 	align-items: center;
 	justify-content: center;
 	display: flex;
+	float: right;
 }
 
 .logar {
 	align-items: center;
 	justify-content: center;
 	display: flex;
+	float: right;
 }
 
 input {
 	font-family: Segoe UI, Arial, Times;
-	font-size: 14pt;
-	width: 300px;
+	font-size: 18pt;
+	width: 400px;
 	margin-top: 1rem;
 }
 
 input[type=submit] {
 	font-weight: bold;
-	padding: 2px 10px;
+	padding: 2px 12px;
 	margin-top: 1rem;
+	width: 250px;
+	margin-left: -189px;
 }
+
+.campo a {
+	padding-right: 60px;
+	float: right;
+	margin-top: 5rem;
+}
+
+.main {
+	min-height: 500px
+}
+
+/*estilo do cabeçalho do roadape*/
+.rodape {
+	margin: 5px;
+	border-top: 2px solid gray;
+}
+
+.cabecalho {
+	border-bottom: 2px solid gray;
+	min-height: 80px;
+}
+
+.cabecalho a {
+	text-decoration: none;
+}
+
+.cabecalho .logo {
+	float: left;
+	
+}
+
+.cabecalho .logo img {
+
+	width: 10%;
+	padding: 10px;
+}
+
+.cabecalho a:hover {
+	text-decoration: underline;
+}
+
+.cabecalho ul, .cabecalho ol {
+	float: right;
+	list-style: none;
+	padding: 10px;
+}
+
+.cabecalho li {
+	float: left;
+	margin: 0px 4px;
+	padding-right: 5px;
+	border-right: 1px solid gray;	
+}
+
