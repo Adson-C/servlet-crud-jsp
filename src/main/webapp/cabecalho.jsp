@@ -7,10 +7,10 @@
 	</div>
 	<ul>
 
-		<li><a href="">Home</a></li>
-		<li><a href="">Casdastro</a></li>
-		<li><a href="">Consultas</a></li>
-		<li><a href="">Sair</a></li>
+		<li><a href="index.jsp">Home</a></li>
+		<li><a href="cadastro.jsp">Casdastro</a></li>
+		<li><a href="main?acao=consultas">Consultas</a></li>
+		<li><a href="main?acao=sair">Sair</a></li>
 
 	</ul>
 

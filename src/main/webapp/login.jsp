@@ -12,35 +12,39 @@
 <body>
 
 
-	<div class="container">
 
-		<form method="post" class="form">
+	<form method="post" id="login_form">
 
-			<h1>Login do Sistema</h1>
-
-
+		<fieldset id="fieldset_login">
+			<legend>Login do Sistema</legend>
 
 			<div class="campo">
-				<label for="login">Login:</label> <input type="text" id="login"
-					name="login" maxlength="15" />
+				<div class="label">
+				<label for="login">Login:</label> 
+				</div>
+				<input type="text" id="login" name="login" maxlength="15" />
 			</div>
 
-			<div class="senha">
-				<label for="senha">Senha:</label> <input type="password" id="senha"
-					name="senha" maxlength="15" />
-			</div>
-
-			<div class="logar">
-				<input type="submit" value="Logar" />
-				
-			</div>
+			<div class="campo">
 			
-			<div class="campo">
-			<a href="">Esqueci a Senha</a>
+				<div class="label">
+				<label for="senha">Senha:</label> 
+				</div>
+				<input type="password" id="senha" name="senha" maxlength="15" />
 			</div>
-		</form>
 
-	</div>
+			<div class="campo">
+				<input type="submit" value="Logar" />
+
+			</div>
+
+			<div class="campo">
+				<a href="">Esqueci a Senha</a>
+			</div>
+
+		</fieldset>
+	</form>
+
 
 </body>
 </html>

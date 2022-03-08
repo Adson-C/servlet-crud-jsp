@@ -1,99 +1,75 @@
 @charset "ISO-8859-1";
 
 body {
-	background: linear-gradient(0deg, rgba(34, 195, 185, 1) 34%,
-		rgba(135, 152, 171, 1) 50%);
+	background: linear-gradient(90deg, rgba(200,227,228,1) 0%, rgba(163,161,201,1) 72%);
 	font-family: Segoe UI, Arial, Times;
-	font-size: 14pt;
+	font-size: 16pt;
 }
 
-.container {
-	width: 40%;
-	margin: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 8rem;
-}
-
-.form {
-	width: 30rem;
-	margin: auto;
-	background-color: rgb(235, 235, 235);
-	padding: 4rem 1rem;
-	border-radius: 1rem;
-}
-
-.campo {
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	float: right;
-}
-
-h1 {
-	width: 100%;
-	text-align: center;
-}
-
-label {
-	height: 2rem;
-	size: 12px;
-	float: left;
-}
-
-.senha {
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	float: right;
-}
-
-.logar {
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	float: right;
-}
-
-input {
-	font-family: Segoe UI, Arial, Times;
-	font-size: 18pt;
-	width: 400px;
-	margin-top: 1rem;
-}
+input[type=text], input[type=password] {
+	width: 340px;
+	font-size: 12pt;
+} 
 
 input[type=submit] {
+	width: 260px;
 	font-weight: bold;
-	padding: 2px 12px;
-	margin-top: 1rem;
-	width: 250px;
-	margin-left: -189px;
+	padding: 2px 10px;
+	margin-top: 2rem;
+}
+
+fieldset#fieldset_login {
+	margin: auto;
+	width: 280px;
+	padding: 50px;
+}
+
+.label {
+	float: left;
+	text-align: right;
+	line-height: 1.9rem;
+	padding-right: 4px;
+	padding: 2px 10px;
+	
+}
+.campo input {
+	float: right;
+	padding: 2px 10px;
+	font-size: 14pt;
+	
 }
 
 .campo a {
 	padding-right: 60px;
 	float: right;
-	margin-top: 5rem;
+	margin-top: 3rem;
 }
 
 .main {
-	min-height: 500px
+	min-height: 480px;
+	color: white;
+	clear: both;
+	
 }
 
 /*estilo do cabeçalho do roadape*/
 .rodape {
 	margin: 5px;
 	border-top: 2px solid gray;
+	float: left;
+	opacity: 0.5;
 }
 
 .cabecalho {
 	border-bottom: 2px solid gray;
-	min-height: 80px;
+	min-height: 60px;
 }
 
 .cabecalho a {
 	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	
 }
 
 .cabecalho .logo {
@@ -123,4 +99,5 @@ input[type=submit] {
 	padding-right: 5px;
 	border-right: 1px solid gray;	
 }
+
 
