@@ -19,14 +19,4 @@ public class ConexaoUltil {
 		
 	}
 	
-	public static void main(String[] args) {
-		try {
-			System.out.println(getConexao());
-			
-		} catch (ClassNotFoundException | SQLException e) {
-			
-			e.printStackTrace();
-		}
-	}
-
 }
