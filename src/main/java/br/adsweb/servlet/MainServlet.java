@@ -26,13 +26,19 @@ public class MainServlet extends HttpServlet {
 			
 		} else if ("login".equals(acao)) {
 			try {
-				new UsuarioBO().validarUsuario(req);
+				
+				prox = "index.jsp";
+				
+				if (!new UsuarioBO().validarUsuario(req)) {
+					req.setAttribute("msgErro", "Usuário/Senha inválido!");
+					prox = "login.jsp";
+				}
+				
 			} catch (NegocioException e) {
-				e.printStackTrace();
 				req.setAttribute("msgErro", e.getMessage());
+				
 				prox = "login.jsp";
 			}
-			prox = "index.jsp";
 			
 		} else if ("consultas".equals(acao)) {
 			prox = "consultas.jsp";

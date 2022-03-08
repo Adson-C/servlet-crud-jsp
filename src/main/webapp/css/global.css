@@ -99,5 +99,15 @@ fieldset#fieldset_login {
 	padding-right: 5px;
 	border-right: 1px solid gray;	
 }
+/*fim do css do cabecalho e rodape*/
 
+/*Css div erros*/
+.erroDiv {
 
+	min-height: 30px;
+	width: auto;
+	padding: 10px;
+	font-weight: lighter;
+	color: red;
+	align-items: center;	
+}

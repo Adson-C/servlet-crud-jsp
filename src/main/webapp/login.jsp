@@ -13,7 +13,12 @@
 
 
 
-	<form method="post" id="login_form">
+	<form method="post" id="login_form" action="main?acao=login">
+	
+		<div class="erroDiv">
+		${msgErro != null ? msgErro: '' }
+	
+		</div>
 
 		<fieldset id="fieldset_login">
 			<legend>Login do Sistema</legend>

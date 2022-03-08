@@ -14,10 +14,11 @@
 	
 	<div class="main">
 	
+	<h1>Olá, Seja Bem Vindo ao CRUD - Adosn Sá!</h1>
+	
 	<fieldset>
 	<legend>CRUD ADSON</legend>
 	
-	<h1>Olá, Seja Bem Vindo ao CRUD - Adosn Sá!</h1>
 	
 	<h4>Esse é um sistema CRUD de casdastro, consultas e operações básicas em torno dos nossos clientes.</h4>
 	</fieldset>

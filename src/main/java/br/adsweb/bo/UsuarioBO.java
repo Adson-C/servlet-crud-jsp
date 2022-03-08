@@ -17,7 +17,7 @@ public class UsuarioBO {
 		
 		try {
 		
-		String usuario = req.getParameter("usuario");
+		String usuario = req.getParameter("login");
 		String senha = req.getParameter("senha");
 		
 		UsuarioDTO dto = new UsuarioDTO();
