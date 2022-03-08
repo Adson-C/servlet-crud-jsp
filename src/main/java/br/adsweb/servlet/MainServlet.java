@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.adsweb.bo.UsuarioBO;
+import br.adsweb.exception.NegocioException;
+
 @WebServlet("/main" )
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,7 +22,17 @@ public class MainServlet extends HttpServlet {
 		
 		String prox = null;
 		if ("sair".equals(acao)) {
-			prox = "login.jsp";
+			prox = "logout.jsp";
+			
+		} else if ("login".equals(acao)) {
+			try {
+				new UsuarioBO().validarUsuario(req);
+			} catch (NegocioException e) {
+				e.printStackTrace();
+				req.setAttribute("msgErro", e.getMessage());
+				prox = "login.jsp";
+			}
+			prox = "index.jsp";
 			
 		} else if ("consultas".equals(acao)) {
 			prox = "consultas.jsp";

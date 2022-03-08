@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.adsweb.dto.UsuarioDTO;
 import br.adsweb.exception.PersistenciaException;
 import br.adsweb.util.ConexaoUltil;
 
@@ -13,7 +14,7 @@ import br.adsweb.util.ConexaoUltil;
 public class UsuarioDAO {
 	
 	// Methodo de autenticação do usuario 
-	public boolean validarUsuario(String usuario, String senha ) throws PersistenciaException {
+	public boolean validarUsuario(UsuarioDTO usuarioDTO) throws PersistenciaException {
 		
 		try {
 			Connection connect = ConexaoUltil.getConexao();
@@ -24,8 +25,8 @@ public class UsuarioDAO {
 			
 			PreparedStatement pre = connect.prepareStatement(sql.toString());
 			
-			pre.setString(1, usuario);
-			pre.setString(2, senha);
+			pre.setString(1, usuarioDTO.getUsuario());
+			pre.setString(2, usuarioDTO.getSenha());
 			
 			ResultSet resul = pre.executeQuery();
 			
