@@ -15,7 +15,7 @@
 
 	<form method="post" id="login_form" action="main?acao=login">
 	
-		<div class="erroDiv">
+		<div class="erroDiv" style="display: ${msgErro != null ? block: 'none' }">
 			${msgErro != null ? msgErro: '' }
 		</div>
 
@@ -26,7 +26,7 @@
 				<div class="label">
 				<label for="login">Login:</label> 
 				</div>
-				<input type="text" id="login" name="login" maxlength="15" />
+				<input type="text" id="login" name="login" maxlength="15" value="${param.login }"/>
 			</div>
 
 			<div class="campo">
@@ -34,7 +34,7 @@
 				<div class="label">
 				<label for="senha">Senha:</label> 
 				</div>
-				<input type="password" id="senha" name="senha" maxlength="15" />
+				<input type="password" id="senha" name="senha" maxlength="15" value="${param.senha }"/>
 			</div>
 
 			<div class="campo">

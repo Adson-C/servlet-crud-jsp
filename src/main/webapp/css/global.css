@@ -103,6 +103,13 @@ fieldset#fieldset_login {
 	padding-right: 5px;
 	border-right: 1px solid gray;	
 }
+
+.boasVindas {
+	float: right;
+	clear: both;
+	font-style: italic;
+	
+}
 /*fim do css do cabecalho e rodape*/
 
 .erroDiv {

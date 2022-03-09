@@ -8,7 +8,7 @@ public class NegocioException extends Exception {
 
 	
 	public NegocioException(Exception e) {
-		super(e);
+		super(e.getMessage());
 	}
 	
 	public NegocioException(String msg) {

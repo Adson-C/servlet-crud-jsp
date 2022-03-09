@@ -6,6 +6,7 @@ import java.util.Map;
 import br.adsweb.dao.UsuarioDAO;
 import br.adsweb.dto.UsuarioDTO;
 import br.adsweb.exception.NegocioException;
+import br.adsweb.util.MensagemContantes;
 import br.adsweb.validator.LoginValidator;
 
 // Class responsavél para os metodos de negócios da aplicação de Usuarios
@@ -29,7 +30,9 @@ public class UsuarioBO {
 		
 		UsuarioDAO dao = new UsuarioDAO();
 		isValido = dao.validarUsuario(dto);
-					
+		if (!isValido) {
+			throw new NegocioException(MensagemContantes.MSG_ERR_USUARIO_SENHA_INVALIDOS);
+		}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new NegocioException(e);

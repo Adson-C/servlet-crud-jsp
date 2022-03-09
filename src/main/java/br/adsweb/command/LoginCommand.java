@@ -34,6 +34,8 @@ public class LoginCommand  implements Command {
 			e.printStackTrace();
 			req.setAttribute("msgErro", e.getMessage());
 		}
+		
+		req.getSession().setAttribute("usuario", dto);
 		return prox;
 	}
 	
