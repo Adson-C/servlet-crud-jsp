@@ -30,7 +30,7 @@ public class MainServlet extends HttpServlet {
 				prox = "index.jsp";
 				
 				if (!new UsuarioBO().validarUsuario(req)) {
-					req.setAttribute("msgErro", "Usuário/Senha inválido!");
+					req.setAttribute("msgErro", "Usuário e/o Senha inválido!");
 					prox = "login.jsp";
 				}
 				

@@ -9,6 +9,7 @@ body {
 input[type=text], input[type=password] {
 	width: 340px;
 	font-size: 12pt;
+	
 } 
 
 input[type=submit] {
@@ -22,6 +23,9 @@ fieldset#fieldset_login {
 	margin: auto;
 	width: 280px;
 	padding: 50px;
+	color: green;
+	font-weight: bold;
+	size: 16pt;
 }
 
 .label {
@@ -101,13 +105,12 @@ fieldset#fieldset_login {
 }
 /*fim do css do cabecalho e rodape*/
 
-/*Css div erros*/
 .erroDiv {
-
-	min-height: 30px;
+	min-height: 25px;
+	border: 1px solid red;
 	width: auto;
 	padding: 10px;
-	font-weight: lighter;
+	font-weight: bold;
 	color: red;
-	align-items: center;	
+	opacity: 0.4;
 }

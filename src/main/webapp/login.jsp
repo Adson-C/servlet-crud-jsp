@@ -16,8 +16,7 @@
 	<form method="post" id="login_form" action="main?acao=login">
 	
 		<div class="erroDiv">
-		${msgErro != null ? msgErro: '' }
-	
+			${msgErro != null ? msgErro: '' }
 		</div>
 
 		<fieldset id="fieldset_login">
@@ -43,7 +42,7 @@
 
 			</div>
 
-			<div class="campo">
+			<div class="campo" style="opacity: 0.5; font-size: medium;">
 				<a href="">Esqueci a Senha</a>
 			</div>
 
