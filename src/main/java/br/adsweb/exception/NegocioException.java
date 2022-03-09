@@ -11,4 +11,8 @@ public class NegocioException extends Exception {
 		super(e);
 	}
 	
+	public NegocioException(String msg) {
+		super(msg);
+	}
+	
 }

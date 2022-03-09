@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.adsweb.command.Command;
 import br.adsweb.command.LoginCommand;
-import br.adsweb.exception.NegocioException;
 
 @WebServlet("/main" )
 public class MainServlet extends HttpServlet {
@@ -37,10 +36,9 @@ public class MainServlet extends HttpServlet {
 		Command comando = verificarCommand(acao);
 			prox = comando.execute(req);				
 				
-			} catch (NegocioException e) {
+			} catch (Exception e) {
 				req.setAttribute("msgErro", e.getMessage());
 				
-				prox = "login.jsp";
 			}
 			
 		req.getRequestDispatcher(prox).forward(req, resp);
