@@ -7,7 +7,6 @@
 <title>Home</title>
 
 <link rel="stylesheet" href="css/global.css" />
-
 </head>
 <body>
 
@@ -15,13 +14,13 @@
 	
 	<div class="main">
 	
-	<h1>Olá, Seja Bem Vindo ao CRUD - Adosn Sá!</h1>
+	<h1>Alguma exceção inesperada aconteceu.... :(</h1>
 	
 	<fieldset>
-	<legend>CRUD ADSON</legend>
+	<legend>Dica</legend>
 	
 	
-	<h4>Esse é um sistema CRUD de casdastro, consultas e operações básicas em torno dos nossos clientes.</h4>
+	<h4>Favor tentar novamente mais tarde ou entrar em contado com administradores.</h4>
 	</fieldset>
 	
 	</div>

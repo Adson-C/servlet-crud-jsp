@@ -12,7 +12,8 @@ public class LoginCommand  implements Command {
 	
 	private String prox;
 	
-	public String execute(HttpServletRequest req)  {
+	public String execute(HttpServletRequest req)   {
+		
 		prox = "login.jsp";
 		
 		usuarioBO = new UsuarioBO();

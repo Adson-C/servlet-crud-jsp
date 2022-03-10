@@ -11,14 +11,82 @@
 
 	<jsp:include page="cabecalho.jsp" />
 
+	<h1>Cadastros</h1>
+
 	<div class="main">
+		<form action="">
+			<fieldset>
+				<legend>Cadastro de Pessoas</legend>
 
-		<fieldset>
-			<legend>CADASTROS</legend>
+				<table cellpadding="5">
+					<tr>
+						<td style="color: #3842b9;">Nome:</td>
+						<td><input type="text" name="nome" style="margin-top: 8px;"></td>
+					</tr>
+					
+					<tr>
+						<td style="color: #3842b9;">CPF:</td>
+						<td><input type="text" name="cpf" style="margin-top: 8px;"></td>
+					</tr>
+					<tr>
+						<td style="color: #3842b9;">Dat.Nasc:</td>
+						<td><input type="text" name="dtnasc" style="margin-top: 8px;"></td>
+					</tr>
+					<tr>
+						<td style="color: #3842b9;">Sexo:</td>
+						<td style="color: #2a5572;"><input type="radio" name="sexo" value="M" checked="checked">Masculino
+						<input style="color: #2a5572; padding: 2px;" type="radio" name="sexo" value="F">Feminino</td>
+					</tr>
+					
+					<tr>
+						<td style="color: #3842b9;">Preferências:</td>
+						
+						<td style="color: #2a5572;"><input type="checkbox" name="gosto" value="jazz" >Jazz
+						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="blues" value="blues">Blues
+						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="mpb" value="mpb">MPB
+						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="pop" value="pop">Pop
+						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="rock" value="rock">Rock
+						</td>
+					</tr>
+					<tr>
+						<td style="color: #3842b9;">Cométarios:</td>
+						<td>
+							<textarea rows="5" cols="30" name="comentarios"></textarea>
+						</td>
+					</tr>
+				</table>
+				<fieldset>
+					<legend>Endereço:</legend>
+					
+					<table cellpadding="5">
+						<tr>
+							<td style="color: #3842b9;">UF:</td>
+							<td>
+								<select name="uf"></select>
+							
+							</td>
+						</tr>
+						<tr>
+							<td style="color: #3842b9;">Cidade:</td>
+							<td>
+								<select name="cidade"></select>
+							
+							</td>
+						</tr>
+						<tr>
+							<td style="color: #3842b9;">Logradouro:</td>
+							<td>
+								<input type="text" name="lografouro"/>							
+							</td>
+						</tr>
+						
+					</table>
+				</fieldset>
 
-			<h1>Cadastros</h1>
-		</fieldset>
-
+			</fieldset>
+				
+				<input type="submit" value="Cadastrar"/>
+		</form>
 	</div>
 
 	<jsp:include page="rodape.jsp" />

@@ -36,7 +36,7 @@ fieldset#fieldset_login {
 	padding: 2px 10px;
 	
 }
-.campo input {
+#fieldset_login .campo input {
 	float: right;
 	padding: 2px 10px;
 	font-size: 14pt;
@@ -47,6 +47,11 @@ fieldset#fieldset_login {
 	padding-right: 60px;
 	float: right;
 	margin-top: 3rem;
+	color: blue;
+}
+
+a {
+	color: black;	
 }
 
 .main {
@@ -69,12 +74,6 @@ fieldset#fieldset_login {
 	min-height: 60px;
 }
 
-.cabecalho a {
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
-	
-}
 
 .cabecalho .logo {
 	float: left;
@@ -83,12 +82,15 @@ fieldset#fieldset_login {
 
 .cabecalho .logo img {
 
-	width: 10%;
+	width: 30%;
 	padding: 10px;
 }
 
+
+
+
 .cabecalho a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .cabecalho ul, .cabecalho ol {
