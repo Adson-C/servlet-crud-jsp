@@ -1,3 +1,5 @@
+<%@page import="br.adsweb.dto.EstadoDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -62,7 +64,17 @@
 						<tr>
 							<td style="color: #3842b9;">UF:</td>
 							<td>
-								<select name="uf"></select>
+								<select name="uf">
+								<%
+								
+									List<EstadoDTO> listEstados = (List<EstadoDTO>) request.getAttribute("listEstados");
+									for (EstadoDTO estado : listEstados) {
+								%>
+									<option value="<%=estado.getId_uf() %>"><%=estado.getDescricao() %></option>
+								<% 
+									}
+								%>
+								</select>
 							
 							</td>
 						</tr>
