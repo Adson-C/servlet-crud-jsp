@@ -1,3 +1,4 @@
+<%@page import="br.adsweb.dto.CidaddeDTO"%>
 <%@page import="br.adsweb.dto.EstadoDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -11,17 +12,21 @@
 <link rel="stylesheet" href="css/global.css">
 
 <script type="text/javascript">
+
+	function init() {
+		document.getElementById('uf').value = ${ param.idEstado != null ? param.idEstado : '0'};
+	}
 	
 	function popularCidades(comboEstados) {
-		var idEstado;
-		
-		location.href = 'main?acao=cadastro&getCidade=true&idEstado=' + idEstado;
+		var idEstado = comboEstados.options[comboEstados.selectedIndex].value;
+	
+		location.href = 'main?acao=cadastro&getCidades=true&idEstado=' + idEstado;
 	}
 	
 </script>
 
 </head>
-<body>
+<body onload="init()">
 
 	<jsp:include page="cabecalho.jsp" />
 
@@ -76,13 +81,16 @@
 						<tr>
 							<td style="color: #3842b9;">UF:</td>
 							<td>
-								<select name="uf" onchange="">
+								<select name="uf" id="uf" onchange="popularCidades(this)">
+									<option value="0">Selecione...</option>
 								<%
 								
 									List<EstadoDTO> listEstados = (List<EstadoDTO>) session.getAttribute("listEstados");
 									for (EstadoDTO estado : listEstados) {
 								%>
-									<option value="<%=estado.getId_uf() %>"><%=estado.getDescricao() %></option>
+									<option value="<%=estado.getId_uf() %>">
+										<%=estado.getDescricao() %>
+									</option>
 								<% 
 									}
 								%>
@@ -93,7 +101,23 @@
 						<tr>
 							<td style="color: #3842b9;">Cidade:</td>
 							<td>
-								<select name="cidade"></select>
+								<select name="cidade">
+								
+								<option>Selecione...</option>
+									<%
+										List<CidaddeDTO> listaCidades = (List<CidaddeDTO>) request.getAttribute("listaCidades");
+										if (listaCidades != null) {
+										for (CidaddeDTO cidade : listaCidades) {
+											
+									%>
+										<option value="<%= cidade.getIdCidade() %>">
+											<%= cidade.getDescricao() %>
+										</option>
+									<%
+											}
+										}
+									%>
+								</select>
 							
 							</td>
 						</tr>
