@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.adsweb.dto.CidaddeDTO;
 import br.adsweb.dto.EstadoDTO;
 import br.adsweb.exception.PersistenciaException;
 import br.adsweb.util.ConexaoUltil;
@@ -44,5 +45,41 @@ public class CadastroDAO {
 			
 			return list;
 	}
+		// metodo de consulta das cidades de acordo com id do estados 
+		public List<CidaddeDTO> consultarCidadePorEstados(Integer idEstado) throws PersistenciaException {
+			List<CidaddeDTO> listaCidades = new ArrayList<>(); 
+			
+			try {
+				Connection connection = ConexaoUltil.getConexao();
+				
+				StringBuilder sql = new StringBuilder();
+				sql.append("select * from tb_cidade");
+				sql.append(" where cod_estado = ?");
+				
+				PreparedStatement pre = connection.prepareStatement(sql.toString());
+				pre.setInt(1, idEstado);
+				
+				ResultSet result = pre.executeQuery();
+				
+				while (result.next()) {
+					CidaddeDTO cidaddeDTO = new CidaddeDTO();
+					cidaddeDTO.setIdCidade(result.getInt("id_cidade"));
+					cidaddeDTO.setDescricao(result.getString("descricao"));
+					
+					EstadoDTO estadoDTO = new EstadoDTO();
+					estadoDTO.setId_uf(result.getInt("cod_estado"));
+					
+					cidaddeDTO.setEstado(estadoDTO);
+					
+					listaCidades.add(cidaddeDTO);
+				}
+				
+			} catch (ClassNotFoundException | SQLException e) {
+				throw new PersistenciaException(e);
+				
+				
+			}
+			return listaCidades;
+		}
 	
 }

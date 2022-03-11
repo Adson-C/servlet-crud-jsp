@@ -7,7 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Castrados</title>
-<link rel="stylesheet" href="css/global.css" />
+
+<link rel="stylesheet" href="css/global.css">
+
+<script type="text/javascript">
+	
+	function popularCidades(comboEstados) {
+		var idEstado;
+		
+		location.href = 'main?acao=cadastro&getCidade=true&idEstado=' + idEstado;
+	}
+	
+</script>
+
 </head>
 <body>
 
@@ -64,10 +76,10 @@
 						<tr>
 							<td style="color: #3842b9;">UF:</td>
 							<td>
-								<select name="uf">
+								<select name="uf" onchange="">
 								<%
 								
-									List<EstadoDTO> listEstados = (List<EstadoDTO>) request.getAttribute("listEstados");
+									List<EstadoDTO> listEstados = (List<EstadoDTO>) session.getAttribute("listEstados");
 									for (EstadoDTO estado : listEstados) {
 								%>
 									<option value="<%=estado.getId_uf() %>"><%=estado.getDescricao() %></option>
@@ -96,8 +108,8 @@
 				</fieldset>
 
 			</fieldset>
-				
-				<input type="submit" value="Cadastrar"/>
+				<input type="submit" value="Cadastrar" style="font-size: large;"/>
+
 		</form>
 	</div>
 
