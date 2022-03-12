@@ -1,4 +1,4 @@
-<%@page import="br.adsweb.dto.CidaddeDTO"%>
+<%@page import="br.adsweb.dto.CidadeDTO"%>
 <%@page import="br.adsweb.dto.EstadoDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Castrados</title>
 
-<link rel="stylesheet" href="css/global.css">
+   <link rel="stylesheet" href="css/global.css"> 
 
 <script type="text/javascript">
 
@@ -20,7 +20,7 @@
 	function popularCidades(comboEstados) {
 		var idEstado = comboEstados.options[comboEstados.selectedIndex].value;
 	
-		location.href = 'main?acao=cadastro&getCidades=true&idEstado=' + idEstado;
+		location.href = 'main?acao=montagemCadastro&getCidades=true&idEstado=' + idEstado;
 	}
 	
 </script>
@@ -42,7 +42,7 @@
 						<td style="color: #3842b9;">Nome:</td>
 						<td><input type="text" name="nome" style="margin-top: 8px;"></td>
 					</tr>
-					
+										
 					<tr>
 						<td style="color: #3842b9;">CPF:</td>
 						<td><input type="text" name="cpf" style="margin-top: 8px;"></td>
@@ -81,18 +81,18 @@
 						<tr>
 							<td style="color: #3842b9;">UF:</td>
 							<td>
-								<select name="uf" id="uf" onchange="popularCidades(this)">
+								<select name="uf" id="uf" onchange="popularCidades(this)" 
+								style="font-family: Segoe UI; font-size: 12pt; width: 175px">
 									<option value="0">Selecione...</option>
 								<%
-								
-									List<EstadoDTO> listEstados = (List<EstadoDTO>) session.getAttribute("listEstados");
-									for (EstadoDTO estado : listEstados) {
+								List<EstadoDTO> listEstados = (List<EstadoDTO>) session.getAttribute("listEstados");
+															for (EstadoDTO estado : listEstados) {
 								%>
-									<option value="<%=estado.getId_uf() %>">
-										<%=estado.getDescricao() %>
+									<option value="<%=estado.getId_uf()%>">
+										<%=estado.getDescricao()%>
 									</option>
-								<% 
-									}
+								<%
+								}
 								%>
 								</select>
 							
@@ -101,14 +101,13 @@
 						<tr>
 							<td style="color: #3842b9;">Cidade:</td>
 							<td>
-								<select name="cidade">
+								<select name="cidade" style="font-family: Segoe UI; font-size: 12pt; width: 280px">
 								
 								<option>Selecione...</option>
 									<%
-										List<CidaddeDTO> listaCidades = (List<CidaddeDTO>) request.getAttribute("listaCidades");
-										if (listaCidades != null) {
-										for (CidaddeDTO cidade : listaCidades) {
-											
+									List<CidadeDTO> listaCidades = (List<CidadeDTO>) request.getAttribute("listaCidades");
+																	if (listaCidades != null) {
+																	for (CidadeDTO cidade : listaCidades) {
 									%>
 										<option value="<%= cidade.getIdCidade() %>">
 											<%= cidade.getDescricao() %>
@@ -132,7 +131,11 @@
 				</fieldset>
 
 			</fieldset>
-				<input type="submit" value="Cadastrar" style="font-size: large;"/>
+				<input type="submit" value="Cadastrar" style="width: 200px; 
+				font-weight: bold; padding: 5px 10px; font-size: 16pt; margin: 2rem auto 3rem 18rem; color: #164560;"/> 
+    
+				<input type="reset" value="Limpar" style="width: 200px; 
+				font-weight: bold; padding: 5px 10px; font-size: 16pt; color: #853415;"/>
 
 		</form>
 	</div>

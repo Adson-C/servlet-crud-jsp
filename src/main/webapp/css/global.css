@@ -9,15 +9,15 @@ body {
 input[type=text], input[type=password] {
 	width: 340px;
 	font-size: 12pt;
-	
 } 
 
-input[type=submit] {
+ input[type=submit] {
 	width: 260px;
 	font-weight: bold;
 	padding: 2px 10px;
 	margin-top: 2rem;
 }
+
 
 fieldset#fieldset_login {
 	margin: auto;
@@ -55,7 +55,7 @@ a {
 }
 
 .main {
-	min-height: 480px;
+	min-height: 470px;
 	color: white;
 	clear: both;
 	
@@ -122,4 +122,10 @@ a {
 	font-weight: bold;
 	color: red;
 	opacity: 0.4;
+}
+
+select {
+	font-family: Segoe UI;
+	font-size: 14pt;
+	width: 300px;
 }

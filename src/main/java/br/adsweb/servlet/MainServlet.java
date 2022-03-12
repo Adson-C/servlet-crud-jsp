@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.adsweb.command.CadastroCommand;
+import br.adsweb.command.MontagemCadastroCommand;
+import br.adsweb.command.CadastroPessoaCommand;
 import br.adsweb.command.Command;
 import br.adsweb.command.LoginCommand;
 
@@ -23,7 +24,8 @@ public class MainServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		comandos.put("login", new LoginCommand());
-		comandos.put("cadastro", new CadastroCommand());
+		comandos.put("montagemCadastro", new MontagemCadastroCommand());
+		comandos.put("cadastroPessoa", new CadastroPessoaCommand());
 		
 		
 	}

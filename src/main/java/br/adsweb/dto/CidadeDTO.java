@@ -2,7 +2,7 @@ package br.adsweb.dto;
 
 import java.io.Serializable;
 
-public class CidaddeDTO  implements Serializable {
+public class CidadeDTO  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer idCidade;

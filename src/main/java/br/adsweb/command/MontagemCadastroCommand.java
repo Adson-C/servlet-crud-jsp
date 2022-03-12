@@ -5,11 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import br.adsweb.dao.CadastroDAO;
-import br.adsweb.dto.CidaddeDTO;
+import br.adsweb.dto.CidadeDTO;
 import br.adsweb.dto.EstadoDTO;
 import br.adsweb.exception.PersistenciaException;
 
-public class CadastroCommand  implements Command {
+public class MontagemCadastroCommand  implements Command {
 	
 	private String prox;
 	
@@ -28,7 +28,7 @@ public class CadastroCommand  implements Command {
 				String id = req.getParameter("idEstado");
 				int idEstado = Integer.parseInt(id);
 				
-				List<CidaddeDTO> listaCidades = cadastroDAO.consultarCidadePorEstados(idEstado);
+				List<CidadeDTO> listaCidades = cadastroDAO.consultarCidadePorEstados(idEstado);
 				req.setAttribute("listaCidades", listaCidades );
 			}
 			else {
