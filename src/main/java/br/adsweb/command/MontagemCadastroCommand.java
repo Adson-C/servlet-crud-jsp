@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import br.adsweb.dao.CadastroDAO;
 import br.adsweb.dto.CidadeDTO;
 import br.adsweb.dto.EstadoDTO;
+import br.adsweb.dto.PrefereciaMusicalDTO;
 import br.adsweb.exception.PersistenciaException;
 
 public class MontagemCadastroCommand  implements Command {
@@ -18,7 +19,7 @@ public class MontagemCadastroCommand  implements Command {
 	public String execute(HttpServletRequest req)   {
 		
 		cadastroDAO = new CadastroDAO();
-		prox = "cadastro.jsp";
+		prox = "cadastroPessoa.jsp";
 		
 		String getcidades = req.getParameter("getCidades");
 		
@@ -34,7 +35,9 @@ public class MontagemCadastroCommand  implements Command {
 			else {
 				
 				List<EstadoDTO> listEstados = cadastroDAO.listEstados();
+				List<PrefereciaMusicalDTO> listarPreferencias = cadastroDAO.listarPreferencias();
 				req.getSession().setAttribute("listEstados", listEstados);
+				req.getSession().setAttribute("listarPreferencias", listarPreferencias);
 			}
 			
 		} catch (PersistenciaException e) {

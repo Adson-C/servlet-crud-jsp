@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.adsweb.dto.CidadeDTO;
 import br.adsweb.dto.EstadoDTO;
+import br.adsweb.dto.PrefereciaMusicalDTO;
 import br.adsweb.exception.PersistenciaException;
 import br.adsweb.util.ConexaoUltil;
 
@@ -45,6 +46,37 @@ public class CadastroDAO {
 			
 			return list;
 	}
+		
+		// metodo para listar preferenciaMusical
+		public List<PrefereciaMusicalDTO> listarPreferencias() throws PersistenciaException {
+			
+			List<PrefereciaMusicalDTO> listarPrefe = new ArrayList<>();
+			
+			try {
+				Connection connection = ConexaoUltil.getConexao();
+				
+				StringBuilder sql = new StringBuilder();
+				sql.append("select * from tb_preferencia");
+				
+				PreparedStatement pre = connection.prepareStatement(sql.toString());
+				
+				ResultSet resul = pre.executeQuery();
+				
+				while (resul.next()) {
+					PrefereciaMusicalDTO prefereciaMusical = new PrefereciaMusicalDTO();
+					prefereciaMusical.setIdPreferencia(resul.getInt(1));
+					prefereciaMusical.setDescricao(resul.getString(2));
+					
+					listarPrefe.add(prefereciaMusical);
+				}
+				
+			} catch (ClassNotFoundException | SQLException e) {
+				throw new PersistenciaException(e);
+			}
+			
+			return listarPrefe;
+		}
+		
 		// metodo de consulta das cidades de acordo com id do estados 
 		public List<CidadeDTO> consultarCidadePorEstados(Integer idEstado) throws PersistenciaException {
 			List<CidadeDTO> listaCidades = new ArrayList<>(); 

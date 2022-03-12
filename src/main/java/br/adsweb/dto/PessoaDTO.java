@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import br.adsweb.util.PreferenciaMusical;
+
 
 public class PessoaDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -19,7 +19,7 @@ public class PessoaDTO implements Serializable{
 	
 	private char sexo;
 	
-	private List<PreferenciaMusical> preferencia;
+	private List<PrefereciaMusicalDTO> preferencia;
 	
 	private String cometario;
 	
@@ -65,13 +65,6 @@ public class PessoaDTO implements Serializable{
 		this.sexo = sexo;
 	}
 
-	public List<PreferenciaMusical> getPreferencia() {
-		return preferencia;
-	}
-
-	public void setPreferencia(List<PreferenciaMusical> preferencia) {
-		this.preferencia = preferencia;
-	}
 
 	public String getCometario() {
 		return cometario;
@@ -87,6 +80,14 @@ public class PessoaDTO implements Serializable{
 
 	public void setEndereco(EnderecoDTO endereco) {
 		this.endereco = endereco;
+	}
+
+	public List<PrefereciaMusicalDTO> getPreferencia() {
+		return preferencia;
+	}
+
+	public void setPreferencia(List<PrefereciaMusicalDTO> preferencia) {
+		this.preferencia = preferencia;
 	}
 	
 	

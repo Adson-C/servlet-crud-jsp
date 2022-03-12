@@ -1,3 +1,4 @@
+<%@page import="br.adsweb.dto.PrefereciaMusicalDTO"%>
 <%@page import="br.adsweb.dto.CidadeDTO"%>
 <%@page import="br.adsweb.dto.EstadoDTO"%>
 <%@page import="java.util.List"%>
@@ -60,11 +61,19 @@
 					<tr>
 						<td style="color: #3842b9;">Preferências:</td>
 						
-						<td style="color: #2a5572;"><input type="checkbox" name="gosto" value="jazz" >Jazz
-						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="blues" value="blues">Blues
-						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="mpb" value="mpb">MPB
-						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="pop" value="pop">Pop
-						<input style="color: #2a5572; padding: 2px;" type="checkbox" name="rock" value="rock">Rock
+						<td style="color: #2a5572;"> 
+						
+							<%
+								List<PrefereciaMusicalDTO> preferecias = (List<PrefereciaMusicalDTO>) session.getAttribute("listarPreferencias");
+								for (PrefereciaMusicalDTO preferecia : preferecias) {
+							%>
+								<input type="checkbox" name="gostos" 
+								value="<%= preferecia.getIdPreferencia() %>" /><%= preferecia.getDescricao() %>
+							
+							<% 
+							
+								}
+							%>
 						</td>
 					</tr>
 					<tr>
