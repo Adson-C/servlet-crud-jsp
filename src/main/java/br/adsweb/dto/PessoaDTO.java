@@ -1,7 +1,6 @@
 package br.adsweb.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 
@@ -13,9 +12,9 @@ public class PessoaDTO implements Serializable{
 	
 	private String nome;
 	
-	private Long cpf;
+	private String cpf;
 	
-	private Date dtNasc;
+	private String dtNasc;
 	
 	private char sexo;
 	
@@ -41,19 +40,22 @@ public class PessoaDTO implements Serializable{
 		this.nome = nome;
 	}
 
-	public Long getCpf() {
+	
+	
+
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public Date getDtNasc() {
+	public String getDtNasc() {
 		return dtNasc;
 	}
 
-	public void setDtNasc(Date dtNasc) {
+	public void setDtNasc(String dtNasc) {
 		this.dtNasc = dtNasc;
 	}
 
